@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     private bool _canShot;
     public Vector2 startPosition = new(0, -3.9f);
     private Vector2 _dragDistance = Vector2.one;
+    public float maxSpeed = 11f;
     public Vector2 getDragDistance() => _dragDistance;
 
 
@@ -25,6 +26,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         HandleInput();
+        _rb.velocity = Vector3.ClampMagnitude(_rb.velocity, maxSpeed);
     }
 
     // Handle touch input for mobile devices.
