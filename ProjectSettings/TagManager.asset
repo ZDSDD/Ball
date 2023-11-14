@@ -7,6 +7,8 @@ TagManager:
   - Obstacle
   - Bouncy_Obstacle
   - Map
+  - Checkpoint
+  - FinishPoint
   layers:
   - Default
   - TransparentFX

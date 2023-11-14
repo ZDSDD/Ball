@@ -1,4 +1,5 @@
 
+using System;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -8,9 +9,10 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D _rb; // Reference to the Rigidbody2D component of the player (ball).
     public float launchPower = 0.1f; // Adjust this to control the sensitivity of drag.
     private bool _canShot;
-    public Vector2 startPosition = new(0, -3.9f);
+    public Vector2 startPosition = new(0, 0);
     private Vector2 _dragDistance = Vector2.one;
     public float maxSpeed = 11f;
+    private Vector2 _activeCheckpoint = new Vector2(0,0);
     public Vector2 getDragDistance() => _dragDistance;
 
 
@@ -20,6 +22,7 @@ public class PlayerController : MonoBehaviour
         _canShot = true;
         _rb.gravityScale = 0f;
         _rb.simulated = true;
+        _activeCheckpoint = startPosition;
         transform.position = startPosition;
     }
 
@@ -27,12 +30,26 @@ public class PlayerController : MonoBehaviour
     {
         HandleInput();
         _rb.velocity = Vector3.ClampMagnitude(_rb.velocity, maxSpeed);
+        BallStoppedMoving();
+    }
+
+    private void BallStoppedMoving()
+    {
+        if (_canShot)
+            return;
+
+        if(_rb.velocity == Vector2.zero)
+        {
+            Reset();
+        }
     }
 
     // Handle touch input for mobile devices.
     private void HandleInput()
     {
-        if (!_canShot) return;
+        if (!_canShot)
+            return;
+
         if (Input.touchCount > 0)
         {
             // Handle touch input.
@@ -68,9 +85,14 @@ public class PlayerController : MonoBehaviour
 
     public void Reset()
     {
-        transform.position = startPosition;
+        transform.position = _activeCheckpoint;
         _rb.gravityScale = 0f;
         _rb.velocity = Vector2.zero;
         _canShot = true;
+    }
+
+    public void UpdateCheckpoint(Vector2 newCheckPointPos)
+    {
+        _activeCheckpoint = newCheckPointPos;
     }
 }
