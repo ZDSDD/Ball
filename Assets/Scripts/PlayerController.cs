@@ -33,6 +33,7 @@ public class PlayerController : MonoBehaviour
         BallStoppedMoving();
     }
 
+    //todo: ball should be considered not moving even if it is moving REALLY slowly?
     private void BallStoppedMoving()
     {
         if (_canShot)

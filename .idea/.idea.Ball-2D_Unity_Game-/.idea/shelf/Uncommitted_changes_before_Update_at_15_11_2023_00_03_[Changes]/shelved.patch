@@ -1,0 +1,75 @@
+Index: .idea/.idea.Ball-2D_Unity_Game-/.idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"d578de3e-57b9-45ad-8fd6-4a56f95c9910\" name=\"Changes\" comment=\"OutOfScreenManager sets playerController if pC was null at the start of the game\">\r\n      <change beforePath=\"$PROJECT_DIR$/Assets/Scripts/OutOfScreenManager.cs\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Assets/Scripts/OutOfScreenManager.cs\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"HighlightingSettingsPerFile\">\r\n    <setting file=\"mock://C:/Unity/kulka/Ball-2D_Unity_Game-/Assets/Scenes/BouncyObstacleTest.unity\" root0=\"SKIP_HIGHLIGHTING\" />\r\n    <setting file=\"mock://C:/Unity/kulka/Ball-2D_Unity_Game-/ProjectSettings/EditorBuildSettings.asset\" root0=\"SKIP_HIGHLIGHTING\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"MetaFilesCheckinStateConfiguration\" checkMetaFiles=\"true\" />\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 3\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2YAzTHPHinoNgzIL8yVP9VI6sxU\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;master&quot;\r\n  },\r\n  &quot;keyToStringList&quot;: {\r\n    &quot;rider.external.source.directories&quot;: [\r\n      &quot;C:\\\\Users\\\\User\\\\AppData\\\\Roaming\\\\JetBrains\\\\Rider2023.2\\\\resharper-host\\\\DecompilerCache&quot;,\r\n      &quot;C:\\\\Users\\\\User\\\\AppData\\\\Roaming\\\\JetBrains\\\\Rider2023.2\\\\resharper-host\\\\SourcesCache&quot;,\r\n      &quot;C:\\\\Users\\\\User\\\\AppData\\\\Local\\\\Symbols\\\\src&quot;\r\n    ]\r\n  }\r\n}</component>\r\n  <component name=\"RunManager\" selected=\"Attach to Unity Editor.Attach to Unity Editor\">\r\n    <configuration name=\"Start Unity\" type=\"RunUnityExe\" factoryName=\"Unity Executable\">\r\n      <option name=\"EXE_PATH\" value=\"C:\\Program Files\\Unity_Editors\\2022.3.13f1\\Editor\\Unity.exe\" />\r\n      <option name=\"PROGRAM_PARAMETERS\" value=\"-projectPath C:\\Unity\\kulka\\Ball-2D_Unity_Game- -debugCodeOptimization\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"C:\\Unity\\kulka\\Ball-2D_Unity_Game-\" />\r\n      <option name=\"PASS_PARENT_ENVS\" value=\"1\" />\r\n      <option name=\"USE_EXTERNAL_CONSOLE\" value=\"0\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"Unit Tests (batch mode)\" type=\"RunUnityExe\" factoryName=\"Unity Executable\">\r\n      <option name=\"EXE_PATH\" value=\"C:\\Program Files\\Unity_Editors\\2022.3.13f1\\Editor\\Unity.exe\" />\r\n      <option name=\"PROGRAM_PARAMETERS\" value=\"-runTests -batchmode -projectPath C:\\Unity\\kulka\\Ball-2D_Unity_Game- -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"C:\\Unity\\kulka\\Ball-2D_Unity_Game-\" />\r\n      <option name=\"PASS_PARENT_ENVS\" value=\"1\" />\r\n      <option name=\"USE_EXTERNAL_CONSOLE\" value=\"0\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"Attach to Unity Editor &amp; Play\" type=\"UNITY_DEBUG_RUN_CONFIGURATION\" factoryName=\"UNITY_ATTACH_AND_PLAY\" show_console_on_std_err=\"false\" show_console_on_std_out=\"false\" port=\"50000\" address=\"localhost\">\r\n      <option name=\"allowRunningInParallel\" value=\"false\" />\r\n      <option name=\"listenPortForConnections\" value=\"false\" />\r\n      <option name=\"pid\" />\r\n      <option name=\"projectPathOnTarget\" />\r\n      <option name=\"selectedOptions\">\r\n        <list />\r\n      </option>\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"Attach to Unity Editor\" type=\"UNITY_DEBUG_RUN_CONFIGURATION\" factoryName=\"Unity Debug\" show_console_on_std_err=\"false\" show_console_on_std_out=\"false\" port=\"50000\" address=\"localhost\">\r\n      <option name=\"allowRunningInParallel\" value=\"false\" />\r\n      <option name=\"listenPortForConnections\" value=\"false\" />\r\n      <option name=\"pid\" />\r\n      <option name=\"projectPathOnTarget\" />\r\n      <option name=\"selectedOptions\">\r\n        <list />\r\n      </option>\r\n      <method v=\"2\" />\r\n    </configuration>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"d578de3e-57b9-45ad-8fd6-4a56f95c9910\" name=\"Changes\" comment=\"\" />\r\n      <created>1699983182289</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1699983182289</updated>\r\n      <workItem from=\"1699983187940\" duration=\"1096000\" />\r\n      <workItem from=\"1699996213773\" duration=\"5982000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"add bouncy obstacle\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1699998120264</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1699998120264</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"OutOfScreenManager sets playerController if pC was null at the start of the game\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1700001877251</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1700001877251</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"3\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"UnityCheckinConfiguration\" checkUnsavedScenes=\"true\" />\r\n  <component name=\"UnityProjectConfiguration\" hasMinimizedUI=\"true\" />\r\n  <component name=\"UnityUnitTestConfiguration\" currentTestLauncher=\"Both\" />\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <option name=\"CLEAR_INITIAL_COMMIT_MESSAGE\" value=\"true\" />\r\n    <MESSAGE value=\"add bouncy obstacle\" />\r\n    <MESSAGE value=\"OutOfScreenManager sets playerController if pC was null at the start of the game\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"OutOfScreenManager sets playerController if pC was null at the start of the game\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/.idea.Ball-2D_Unity_Game-/.idea/workspace.xml b/.idea/.idea.Ball-2D_Unity_Game-/.idea/workspace.xml
+--- a/.idea/.idea.Ball-2D_Unity_Game-/.idea/workspace.xml	(revision 7fdc97d063333710329f9d5019439777990e4926)
++++ b/.idea/.idea.Ball-2D_Unity_Game-/.idea/workspace.xml	(date 1700002544693)
+@@ -4,9 +4,7 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="d578de3e-57b9-45ad-8fd6-4a56f95c9910" name="Changes" comment="OutOfScreenManager sets playerController if pC was null at the start of the game">
+-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/OutOfScreenManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/OutOfScreenManager.cs" afterDir="false" />
+-    </list>
++    <list default="true" id="d578de3e-57b9-45ad-8fd6-4a56f95c9910" name="Changes" comment="clean OutOfScreenManager debug logs" />
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -17,6 +15,8 @@
+   </component>
+   <component name="HighlightingSettingsPerFile">
+     <setting file="mock://C:/Unity/kulka/Ball-2D_Unity_Game-/Assets/Scenes/BouncyObstacleTest.unity" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock://C:/Unity/kulka/Ball-2D_Unity_Game-/Assets/Scripts/OutOfScreenManager.cs" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock://C:/Unity/kulka/Ball-2D_Unity_Game-/Assets/Scripts/OutOfScreenManager.cs" root0="SKIP_HIGHLIGHTING" />
+     <setting file="mock://C:/Unity/kulka/Ball-2D_Unity_Game-/ProjectSettings/EditorBuildSettings.asset" root0="SKIP_HIGHLIGHTING" />
+   </component>
+   <component name="MarkdownSettingsMigration">
+@@ -93,7 +93,7 @@
+       <option name="presentableId" value="Default" />
+       <updated>1699983182289</updated>
+       <workItem from="1699983187940" duration="1096000" />
+-      <workItem from="1699996213773" duration="5982000" />
++      <workItem from="1699996213773" duration="6324000" />
+     </task>
+     <task id="LOCAL-00001" summary="add bouncy obstacle">
+       <option name="closed" value="true" />
+@@ -111,7 +111,23 @@
+       <option name="project" value="LOCAL" />
+       <updated>1700001877251</updated>
+     </task>
+-    <option name="localTasksCounter" value="3" />
++    <task id="LOCAL-00003" summary="fix OutOfScreenManager can't find map in the scene">
++      <option name="closed" value="true" />
++      <created>1700002486220</created>
++      <option name="number" value="00003" />
++      <option name="presentableId" value="LOCAL-00003" />
++      <option name="project" value="LOCAL" />
++      <updated>1700002486220</updated>
++    </task>
++    <task id="LOCAL-00004" summary="clean OutOfScreenManager debug logs">
++      <option name="closed" value="true" />
++      <created>1700002531940</created>
++      <option name="number" value="00004" />
++      <option name="presentableId" value="LOCAL-00004" />
++      <option name="project" value="LOCAL" />
++      <updated>1700002531940</updated>
++    </task>
++    <option name="localTasksCounter" value="5" />
+     <servers />
+   </component>
+   <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
+@@ -132,6 +148,8 @@
+     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+     <MESSAGE value="add bouncy obstacle" />
+     <MESSAGE value="OutOfScreenManager sets playerController if pC was null at the start of the game" />
+-    <option name="LAST_COMMIT_MESSAGE" value="OutOfScreenManager sets playerController if pC was null at the start of the game" />
++    <MESSAGE value="fix OutOfScreenManager can't find map in the scene" />
++    <MESSAGE value="clean OutOfScreenManager debug logs" />
++    <option name="LAST_COMMIT_MESSAGE" value="clean OutOfScreenManager debug logs" />
+   </component>
+ </project>
+\ No newline at end of file
