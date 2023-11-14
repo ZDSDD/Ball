@@ -5,20 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d578de3e-57b9-45ad-8fd6-4a56f95c9910" name="Changes" comment="OutOfScreenManager sets playerController if pC was null at the start of the game">
-      <change afterPath="$PROJECT_DIR$/Assets/Adaptive Performance/AdaptivePerformanceGeneralSettings.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Adaptive Performance/AdaptivePerformanceGeneralSettings.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Ball-2D_Unity_Game-/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Ball-2D_Unity_Game-/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PM_BouncyObstacle.physicsMaterial2D" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PM_BouncyObstacle.physicsMaterial2D" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Map.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Map.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/OutOfScreenManager.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/OutOfScreenManager.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/BouncyObstacleTest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/BouncyObstacleTest.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Scena_Testowa.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Scena_Testowa.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/OutOfScreenManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/OutOfScreenManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Unity.VisualScripting.Generated/VisualScripting.Flow/UnitOptions.db" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Unity.VisualScripting.Generated/VisualScripting.Flow/UnitOptions.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +93,7 @@
       <option name="presentableId" value="Default" />
       <updated>1699983182289</updated>
       <workItem from="1699983187940" duration="1096000" />
-      <workItem from="1699996213773" duration="5644000" />
+      <workItem from="1699996213773" duration="5982000" />
     </task>
     <task id="LOCAL-00001" summary="add bouncy obstacle">
       <option name="closed" value="true" />
@@ -116,7 +103,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699998120264</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="OutOfScreenManager sets playerController if pC was null at the start of the game">
+      <option name="closed" value="true" />
+      <created>1700001877251</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1700001877251</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />

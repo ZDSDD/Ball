@@ -17,10 +17,16 @@ public class OutOfScreenManager : MonoBehaviour
         {
             playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
         }
-        //bug: map isn't set even if it is in the scene.
-        if (map is null)
+        //double-check because raw null is "NOT" enough :)
+        if (map is null || map.IsUnityNull())
         {
-            map = GameObject.FindWithTag("Map").GetComponent<Renderer>();
+            map = (Renderer)GameObject.FindWithTag("Map").GetComponent<SpriteRenderer>();
+            Debug.Log("Map was indeed NULL, and now is: " + map);
+        }
+        else
+        {
+            Debug.Log("Map wasn't null " + map);
+
         }
         if (playerController && map)
         {
