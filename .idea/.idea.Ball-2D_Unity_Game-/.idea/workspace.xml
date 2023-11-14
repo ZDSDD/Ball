@@ -4,9 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d578de3e-57b9-45ad-8fd6-4a56f95c9910" name="Changes" comment="">
+    <list default="true" id="d578de3e-57b9-45ad-8fd6-4a56f95c9910" name="Changes" comment="OutOfScreenManager sets playerController if pC was null at the start of the game">
+      <change afterPath="$PROJECT_DIR$/Assets/Adaptive Performance/AdaptivePerformanceGeneralSettings.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Adaptive Performance/AdaptivePerformanceGeneralSettings.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Ball-2D_Unity_Game-/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Ball-2D_Unity_Game-/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PM_BouncyObstacle.physicsMaterial2D" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PM_BouncyObstacle.physicsMaterial2D" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Map.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Map.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/OutOfScreenManager.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/OutOfScreenManager.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/BouncyObstacleTest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/BouncyObstacleTest.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Scena_Testowa.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Scena_Testowa.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/OutOfScreenManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/OutOfScreenManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Unity.VisualScripting.Generated/VisualScripting.Flow/UnitOptions.db" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Unity.VisualScripting.Generated/VisualScripting.Flow/UnitOptions.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
@@ -18,9 +28,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock://C:/Unity/kulka/Ball-2D_Unity_Game-/Assets/Scenes/BouncyObstacleTest.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Unity/kulka/Ball-2D_Unity_Game-/ProjectSettings/EditorBuildSettings.asset" root0="SKIP_HIGHLIGHTING" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
@@ -91,10 +106,20 @@
       <option name="presentableId" value="Default" />
       <updated>1699983182289</updated>
       <workItem from="1699983187940" duration="1096000" />
-      <workItem from="1699996213773" duration="1686000" />
+      <workItem from="1699996213773" duration="5644000" />
     </task>
+    <task id="LOCAL-00001" summary="add bouncy obstacle">
+      <option name="closed" value="true" />
+      <created>1699998120264</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1699998120264</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
   <component name="Vcs.Log.Tabs.Properties">
@@ -110,5 +135,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="add bouncy obstacle" />
+    <MESSAGE value="OutOfScreenManager sets playerController if pC was null at the start of the game" />
+    <option name="LAST_COMMIT_MESSAGE" value="OutOfScreenManager sets playerController if pC was null at the start of the game" />
   </component>
 </project>

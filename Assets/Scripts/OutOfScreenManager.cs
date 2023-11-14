@@ -7,21 +7,26 @@ public class OutOfScreenManager : MonoBehaviour
 {
     public PlayerController playerController;
     public Renderer map;
-    private Bounds mapBounds;
-    private bool _variablesSet;
+    private Bounds _mapBounds;
+    private bool _variablesSet = false;
 
     void Start()
-    {   
-        if (playerController is null || map is null)
+    {
+        /* If Manager wasn't properly set by the developer, try to find player and map in the scene */
+        if (playerController is null)
         {
-            _variablesSet = false;
-            Debug.Log("playerController is null || map is null");
-            return;
+            playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
         }
-
-        _variablesSet = true;
-        mapBounds = map.bounds;
-        Debug.Log("Map bounds:\t" + mapBounds);
+        //bug: map isn't set even if it is in the scene.
+        if (map is null)
+        {
+            map = GameObject.FindWithTag("Map").GetComponent<Renderer>();
+        }
+        if (playerController && map)
+        {
+            _variablesSet = true;
+            _mapBounds = map.bounds;
+        }
     }
 
     // Update is called once per frame
@@ -29,10 +34,9 @@ public class OutOfScreenManager : MonoBehaviour
     {
         if (!_variablesSet) return;
         var playerPos = playerController.transform.position;
-        if (!mapBounds.Contains(playerPos))
+        if (!_mapBounds.Contains(playerPos))
         {
             playerController.Reset();
         }
-        
     }
 }

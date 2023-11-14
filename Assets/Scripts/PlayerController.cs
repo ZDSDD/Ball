@@ -32,9 +32,7 @@ public class PlayerController : MonoBehaviour
     // Handle touch input for mobile devices.
     private void HandleInput()
     {
-        if (!_canShot)
-            return;
-
+        if (!_canShot) return;
         if (Input.touchCount > 0)
         {
             // Handle touch input.

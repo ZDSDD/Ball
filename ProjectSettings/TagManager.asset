@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Obstacle
   - Bouncy_Obstacle
+  - Map
   layers:
   - Default
   - TransparentFX
