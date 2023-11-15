@@ -4,31 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d578de3e-57b9-45ad-8fd6-4a56f95c9910" name="Changes" comment="add CameraFollow.cs">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Ball-2D_Unity_Game-/.idea/shelf/Uncommitted_changes_before_Update_at_15_11_2023_00_03_[Changes]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Ball-2D_Unity_Game-/.idea/shelf/Uncommitted_changes_before_Update_at_15_11_2023_00_03__Changes_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Materials.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Materials/Ball Material.physicsMaterial2D" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Materials/Ball Material.physicsMaterial2D.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Materials/PM_BouncyObstacle.physicsMaterial2D" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Materials/PM_BouncyObstacle.physicsMaterial2D.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Materials/PM_Player.physicsMaterial2D" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Materials/PM_Player.physicsMaterial2D.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/CameraFollow.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/CameraFollow.cs.meta" afterDir="false" />
+    <list default="true" id="d578de3e-57b9-45ad-8fd6-4a56f95c9910" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Ball-2D_Unity_Game-/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Ball-2D_Unity_Game-/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MainScene.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MainScene.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Map Objects/Ball Material.physicsMaterial2D" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Map Objects/Ball Material.physicsMaterial2D.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PACZKI_DO_IMPORTOWANIA/Ball_V0.02.unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PM_BouncyObstacle.physicsMaterial2D" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PM_BouncyObstacle.physicsMaterial2D.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PM_Player.physicsMaterial2D" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PM_Player.physicsMaterial2D.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,7 +115,8 @@
       <option name="presentableId" value="Default" />
       <updated>1699983182289</updated>
       <workItem from="1699983187940" duration="1096000" />
-      <workItem from="1699996213773" duration="8496000" />
+      <workItem from="1699996213773" duration="8580000" />
+      <workItem from="1700070008315" duration="81000" />
     </task>
     <task id="LOCAL-00001" summary="add bouncy obstacle">
       <option name="closed" value="true" />
@@ -172,7 +150,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700002531940</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="add CameraFollow.cs">
+      <option name="closed" value="true" />
+      <created>1700004726505</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1700004726505</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
