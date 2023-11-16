@@ -9,6 +9,7 @@ TagManager:
   - Map
   - Checkpoint
   - FinishPoint
+  - GravityMod
   layers:
   - Default
   - TransparentFX

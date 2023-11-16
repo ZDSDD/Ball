@@ -4,13 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d578de3e-57b9-45ad-8fd6-4a56f95c9910" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Finish.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Ball-2D_Unity_Game-/.idea/shelf/Uncommitted_changes_before_Update_at_15_11_2023_00_03__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Ball-2D_Unity_Game-/.idea/shelf/Uncommitted_changes_before_Update_at_15_11_2023_00_03__Changes_.xml" afterDir="false" />
+    <list default="true" id="d578de3e-57b9-45ad-8fd6-4a56f95c9910" name="Changes" comment="add prefab, separate scripts for checkpoints and finish. Optimize follow camera. Add physic material to walls">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Ball-2D_Unity_Game-/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Ball-2D_Unity_Game-/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Checkpoint.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Checkpoint.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CameraFollow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CameraFollow.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Checkpoints.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Checkpoints.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Scena_Testowa.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Scena_Testowa.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,30 +20,8 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock://C:/Unity/kulka/Ball-2D_Unity_Game-/Assets/Adaptive Performance.meta" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Unity/kulka/Ball-2D_Unity_Game-/Assets/Adaptive Performance.meta" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Unity/kulka/Ball-2D_Unity_Game-/Assets/Adaptive Performance/AdaptivePerformanceGeneralSettings.asset" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Unity/kulka/Ball-2D_Unity_Game-/Assets/Adaptive Performance/AdaptivePerformanceGeneralSettings.asset" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Unity/kulka/Ball-2D_Unity_Game-/Assets/Adaptive Performance/AdaptivePerformanceGeneralSettings.asset.meta" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Unity/kulka/Ball-2D_Unity_Game-/Assets/Adaptive Performance/AdaptivePerformanceGeneralSettings.asset.meta" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Unity/kulka/Ball-2D_Unity_Game-/Assets/Adaptive Performance/Settings.meta" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Unity/kulka/Ball-2D_Unity_Game-/Assets/Adaptive Performance/Settings.meta" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Unity/kulka/Ball-2D_Unity_Game-/Assets/Adaptive Performance/Settings/Simulator Provider Settings.asset" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Unity/kulka/Ball-2D_Unity_Game-/Assets/Adaptive Performance/Settings/Simulator Provider Settings.asset.meta" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Unity/kulka/Ball-2D_Unity_Game-/Assets/Adaptive Performance/Settings/Simulator Provider Settings.asset.meta" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Unity/kulka/Ball-2D_Unity_Game-/Assets/Scenes/BouncyObstacleTest.unity" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Unity/kulka/Ball-2D_Unity_Game-/Assets/Scripts/OutOfScreenManager.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Unity/kulka/Ball-2D_Unity_Game-/Assets/Scripts/OutOfScreenManager.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Unity/kulka/Ball-2D_Unity_Game-/Assets/Scripts/PlayerController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Unity/kulka/Ball-2D_Unity_Game-/Assets/Scripts/PlayerController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Unity/kulka/Ball-2D_Unity_Game-/Assets/Scripts/PlayerController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Unity/kulka/Ball-2D_Unity_Game-/Assets/Scripts/PlayerController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Gamedevove nauki/Unity_Games/Ball-2D_Unity_Game-/Assets/Scripts/CameraFollow.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.adaptiveperformance@4.0.1/Editor/Management/ProviderSettingsEditor.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Unity/kulka/Ball-2D_Unity_Game-/ProjectSettings/EditorBuildSettings.asset" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Unity/kulka/Ball-2D_Unity_Game-/ProjectSettings/EditorBuildSettings.asset" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Unity/kulka/Ball-2D_Unity_Game-/ProjectSettings/EditorBuildSettings.asset" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Unity/kulka/Ball-2D_Unity_Game-/ProjectSettings/TagManager.asset" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Unity/kulka/Ball-2D_Unity_Game-/ProjectSettings/TagManager.asset" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -122,7 +99,7 @@
       <workItem from="1699983187940" duration="1096000" />
       <workItem from="1699996213773" duration="8580000" />
       <workItem from="1700070008315" duration="81000" />
-      <workItem from="1700171660392" duration="1431000" />
+      <workItem from="1700171660392" duration="4066000" />
     </task>
     <task id="LOCAL-00001" summary="add bouncy obstacle">
       <option name="closed" value="true" />
@@ -164,7 +141,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700004726505</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="add prefab, separate scripts for checkpoints and finish. Optimize follow camera. Add physic material to walls">
+      <option name="closed" value="true" />
+      <created>1700173292079</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1700173292079</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
@@ -188,6 +173,7 @@
     <MESSAGE value="fix OutOfScreenManager can't find map in the scene" />
     <MESSAGE value="clean OutOfScreenManager debug logs" />
     <MESSAGE value="add CameraFollow.cs" />
-    <option name="LAST_COMMIT_MESSAGE" value="add CameraFollow.cs" />
+    <MESSAGE value="add prefab, separate scripts for checkpoints and finish. Optimize follow camera. Add physic material to walls" />
+    <option name="LAST_COMMIT_MESSAGE" value="add prefab, separate scripts for checkpoints and finish. Optimize follow camera. Add physic material to walls" />
   </component>
 </project>

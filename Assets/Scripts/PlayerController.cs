@@ -7,6 +7,9 @@ public class PlayerController : MonoBehaviour
 {
     private Vector2 _touchStartPos; // Store the initial touch position.
     private Rigidbody2D _rb; // Reference to the Rigidbody2D component of the player (ball).
+
+    public Rigidbody2D Rb => _rb;
+
     public float launchPower = 0.1f; // Adjust this to control the sensitivity of drag.
     private bool _canShot;
     public Vector2 startPosition = new(0, 0);
