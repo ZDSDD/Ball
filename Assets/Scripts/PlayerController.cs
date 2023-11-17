@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     private Vector2 _touchStartPos; // Store the initial touch position.
     public Vector2 startPosition = new(0, 0);
-    private Vector2 _activeCheckpoint = new Vector2(0, 0);
+    private Checkpoint _activeCheckpoint;
 
     private Vector2 _dragDistance = Vector2.one;
     public Vector2 getDragDistance() => _dragDistance;
@@ -34,7 +34,15 @@ public class PlayerController : MonoBehaviour
         _canShot = true;
         _rb.gravityScale = 0f;
         _rb.simulated = true;
-        _activeCheckpoint = startPosition;
+        _activeCheckpoint = GameObject.FindGameObjectWithTag("Start").GetComponent<Checkpoint>();
+        if (_activeCheckpoint)
+        {
+            startPosition = _activeCheckpoint.transform.position;
+            if (_activeCheckpoint.resetBounceLimit)
+            {
+                BounceLimit = _activeCheckpoint.newBounceLimit;
+            }
+        }
         transform.position = startPosition;
     }
 
@@ -98,35 +106,42 @@ public class PlayerController : MonoBehaviour
 
     public void Reset()
     {
-        transform.position = _activeCheckpoint;
+        transform.position = _activeCheckpoint.transform.position;
         _rb.gravityScale = 0f;
         _rb.velocity = Vector2.zero;
         _canShot = true;
         _currentBounceCount = 0;
+        if (_activeCheckpoint.resetBounceLimit)
+        {
+            this.BounceLimit = _activeCheckpoint.newBounceLimit;
+        }
     }
 
-    public void UpdateCheckpoint(Vector2 newCheckPointPos)
+    public void UpdateCheckpoint(Checkpoint checkpoint)
     {
-        _activeCheckpoint = newCheckPointPos;
+        _activeCheckpoint = checkpoint;
     }
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (BounceLimit != -1)
+        // Handle bounce limit mechanic
+        // '-1' means unlimited bounces are allowed
+        if (BounceLimit > -1)
         {
-            if (_currentBounceCount == BounceLimit)
+            if (_currentBounceCount >= BounceLimit)
             {
                 Reset();
             }
             else
             {
                 _currentBounceCount++;
+                Debug.Log("_currentBounceCount: " + _currentBounceCount + ", BounceLimit: " + BounceLimit);
             }
         }
         //Handle wrong bounce limit 
         else if (BounceLimit < -1)
         {
-            BounceLimit = -1; // -1 means unlimited bounces
+            BounceLimit = -1;
         }
     }
 }

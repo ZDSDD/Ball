@@ -10,6 +10,8 @@ TagManager:
   - Checkpoint
   - FinishPoint
   - GravityMod
+  - BounceLimitMod
+  - Start
   layers:
   - Default
   - TransparentFX

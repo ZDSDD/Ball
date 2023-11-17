@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 699397115090784328}
   m_Layer: 0
   m_Name: Gravity_Mod
-  m_TagString: Untagged
+  m_TagString: GravityMod
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
