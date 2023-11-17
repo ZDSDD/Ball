@@ -468,7 +468,7 @@ PrefabInstance:
       objectReference: {fileID: 6200000, guid: fadf9880e41af504c8470530ff1ee50b, type: 2}
     - target: {fileID: 5543860001103147760, guid: b3f1410c11666ee42bcbc01312c1c108, type: 3}
       propertyPath: maxSpeed
-      value: 30
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 5543860001103147760, guid: b3f1410c11666ee42bcbc01312c1c108, type: 3}
       propertyPath: launchPower

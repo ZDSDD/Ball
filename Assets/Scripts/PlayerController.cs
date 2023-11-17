@@ -6,17 +6,26 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     private Vector2 _touchStartPos; // Store the initial touch position.
-    private Rigidbody2D _rb; // Reference to the Rigidbody2D component of the player (ball).
-
-    public Rigidbody2D Rb => _rb;
-
-    public float launchPower = 0.1f; // Adjust this to control the sensitivity of drag.
-    private bool _canShot;
     public Vector2 startPosition = new(0, 0);
-    private Vector2 _dragDistance = Vector2.one;
-    public float maxSpeed = 11f;
     private Vector2 _activeCheckpoint = new Vector2(0,0);
+    
+    private Vector2 _dragDistance = Vector2.one;
     public Vector2 getDragDistance() => _dragDistance;
+    
+    private Rigidbody2D _rb; // Reference to the Rigidbody2D component of the player (ball).
+    public Rigidbody2D Rb => _rb;
+    
+    public float launchPower = 0.1f; // Adjust this to control the sensitivity of drag.
+    public float maxSpeed = 11f;
+    
+    private bool _canShot;
+    private bool _levelComplete;
+
+    public bool LevelComplete
+    {
+        get => _levelComplete;
+        set => _levelComplete = value;
+    }
 
 
     void Start()
@@ -39,7 +48,7 @@ public class PlayerController : MonoBehaviour
     //todo: ball should be considered not moving even if it is moving REALLY slowly?
     private void BallStoppedMoving()
     {
-        if (_canShot)
+        if (_levelComplete || _canShot)
             return;
 
         if(_rb.velocity == Vector2.zero)
@@ -51,7 +60,7 @@ public class PlayerController : MonoBehaviour
     // Handle touch input for mobile devices.
     private void HandleInput()
     {
-        if (!_canShot)
+        if (!_canShot || _levelComplete)
             return;
 
         if (Input.touchCount > 0)
