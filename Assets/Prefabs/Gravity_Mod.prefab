@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 3543215299030811788}
   - component: {fileID: 1603359951741043505}
   - component: {fileID: 4890230521211303980}
+  - component: {fileID: 699397115090784328}
   m_Layer: 0
   m_Name: Gravity_Mod
-  m_TagString: Untagged
+  m_TagString: GravityMod
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -148,7 +149,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb1bcdbedc1ae674197c60ccb24ce3bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mGravityDirection: 1
+  mGravityDirection: 4
+  justReverse: 1
 --- !u!222 &4890230521211303980
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -157,3 +159,16 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5120693072536897628}
   m_CullTransparentMesh: 1
+--- !u!114 &699397115090784328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5120693072536897628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29e6556bfaaf8448faa6f3f29def86ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spinSpeed: 50

@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class Finish : MonoBehaviour
 {
-
-
     private void OnTriggerEnter2D(Collider2D other)
     {
         //todo: Implement logic to end the level. UI stuff
@@ -16,11 +14,13 @@ public class Finish : MonoBehaviour
             Debug.Log("BRAVO, YOU FINISHED!");
             playerController.Rb.velocity = Vector2.zero;
             playerController.Rb.gravityScale = 0f;
-            //Move player slowly to the finish center
             StartCoroutine(MovePlayerToFinish(playerController));
             playerController.LevelComplete = true;
         }
     }
+    /**
+     * Move player slowly to the finish center
+     */
     private IEnumerator MovePlayerToFinish(PlayerController playerController)
     {
         float duration = 1.5f; // Adjust the duration as needed
