@@ -520,6 +520,7 @@ GameObject:
   - component: {fileID: 851620727}
   - component: {fileID: 851620726}
   - component: {fileID: 851620725}
+  - component: {fileID: 851620728}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -601,6 +602,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &851620728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 851620724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98f9e9443d988154cb9388239f626083, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1730578662}
+  smoothSpeed: 10
 --- !u!1001 &1249598614
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -612,6 +627,10 @@ PrefabInstance:
     - target: {fileID: 1315875214476773573, guid: b3f1410c11666ee42bcbc01312c1c108, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 5543860001103147760, guid: b3f1410c11666ee42bcbc01312c1c108, type: 3}
+      propertyPath: BounceLimit
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6328404000067748919, guid: b3f1410c11666ee42bcbc01312c1c108, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1032,6 +1051,11 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!4 &1730578662 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6328404000067748919, guid: b3f1410c11666ee42bcbc01312c1c108, type: 3}
+  m_PrefabInstance: {fileID: 1249598614}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1756409138
 GameObject:
   m_ObjectHideFlags: 0
@@ -1300,10 +1324,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1603359951741043505, guid: 7b489bf0238dda34d89359509cc5ad96, type: 3}
-      propertyPath: justReverse
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2629195696566813664, guid: 7b489bf0238dda34d89359509cc5ad96, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

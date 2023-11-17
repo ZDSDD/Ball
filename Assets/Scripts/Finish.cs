@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class Finish : MonoBehaviour
 {
-
-
     private void OnTriggerEnter2D(Collider2D other)
     {
         //todo: Implement logic to end the level. UI stuff
