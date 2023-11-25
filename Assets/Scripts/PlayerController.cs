@@ -5,13 +5,15 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public float launchPower = 0.1f; // Adjust this to control the sensitivity of drag.
+    public float maxSpeed = 11f;
+    public Vector2 startPosition = new(0, 0);
+    public ProjectionDisplay _projectiondisplayRef;
+    
     private Vector2 _touchStartPos; // Store the initial touch position.
     private Rigidbody2D _rb; // Reference to the Rigidbody2D component of the player (ball).
-    public float launchPower = 0.1f; // Adjust this to control the sensitivity of drag.
     private bool _canShot;
-    public Vector2 startPosition = new(0, 0);
     private Vector2 _dragDistance = Vector2.one;
-    public float maxSpeed = 11f;
     private Vector2 _activeCheckpoint = new Vector2(0,0);
     public Vector2 getDragDistance() => _dragDistance;
 
@@ -62,12 +64,14 @@ public class PlayerController : MonoBehaviour
                     _touchStartPos = touch.position;
                     break;
                 case TouchPhase.Moved:
-                    _dragDistance = touch.position - _touchStartPos;
+                    _dragDistance = _touchStartPos - touch.position;
+                    _projectiondisplayRef.SimulateTrajectory(this, _dragDistance);
                     break;
                 case TouchPhase.Ended:
                     // Release the ball, apply a launch force based on drag distance.
                     _rb.gravityScale = 1f;
-                    LaunchBall(-_dragDistance);
+                    _projectiondisplayRef.ResetDisplay();
+                    LaunchBall(_dragDistance);
                     _canShot = false;
                     break;
             }

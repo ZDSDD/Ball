@@ -9,6 +9,7 @@ TagManager:
   - Map
   - Checkpoint
   - FinishPoint
+  - CheckPointList
   layers:
   - Default
   - TransparentFX
