@@ -113,7 +113,7 @@ public class PlayerController : MonoBehaviour
         _rb.gravityScale = 0f;
         _rb.velocity = Vector2.zero;
         //todo: change magic number '3' to something else
-        StartCoroutine(CanShootCoolDown(3));
+        StartCoroutine(CanShootCoolDown(3f));
         _currentBounceCount = 0;
         if (_activeCheckpoint.resetBounceLimit)
         {

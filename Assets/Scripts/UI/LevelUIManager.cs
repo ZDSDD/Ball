@@ -2,26 +2,27 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
+[DefaultExecutionOrder(1001)]
 public class LevelUIManager : MonoBehaviour
 {
     public Button resetButton;
+    public Button menuButton;
     public PlayerController playerController;
+    [FormerlySerializedAs("pausePanel")] public GameObject levelFinishedPanel;
 
     private void Start()
     {
-        if (playerController is null)
-        {
-            playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
-            playerController.onLevelComplete += OnLevelComplete;
-        }
+        playerController ??= GameObject.FindWithTag("Player").GetComponent<PlayerController>();
 
-        if (resetButton)
-        {
-            resetButton.onClick.AddListener(ResetLevel);
-            resetButton.gameObject.SetActive(true);
-        }
+        playerController.onLevelComplete += OnLevelComplete;
+        resetButton.onClick.AddListener(ResetLevel);
+        resetButton.gameObject.SetActive(true);
+        levelFinishedPanel.SetActive(false);
+        menuButton.onClick.AddListener(GoToMenu);
     }
 
     private void ResetLevel()
@@ -33,12 +34,17 @@ public class LevelUIManager : MonoBehaviour
 
     private IEnumerator ResetButtonCooldown()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(3f);
         resetButton.gameObject.SetActive(true);
     }
 
     private void OnLevelComplete()
     {
         resetButton.gameObject.SetActive(false);
+        levelFinishedPanel.SetActive(true);
+    }
+    private void GoToMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 }
