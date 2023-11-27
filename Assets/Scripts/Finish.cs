@@ -2,9 +2,11 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Finish : MonoBehaviour
 {
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         //todo: Implement logic to end the level. UI stuff
@@ -16,6 +18,7 @@ public class Finish : MonoBehaviour
             playerController.Rb.gravityScale = 0f;
             StartCoroutine(MovePlayerToFinish(playerController));
             playerController.LevelComplete = true;
+            playerController.onLevelComplete.Invoke();
         }
     }
     /**
@@ -37,5 +40,6 @@ public class Finish : MonoBehaviour
 
         // Ensure the player is exactly at the target position
         playerController.transform.position = targetPosition;
+        
     }
 }
