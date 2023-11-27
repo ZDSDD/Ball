@@ -1,7 +1,6 @@
 using System;
-using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class PlayerController : MonoBehaviour
 {
@@ -18,12 +17,16 @@ public class PlayerController : MonoBehaviour
     public float launchPower = 0.1f; // Adjust this to control the sensitivity of drag.
     public float maxSpeed = 11f;
     public int BounceLimit = -1;
-    private int _currentBounceCount = 0;
+    private int _currentBounceCount;
 
     private bool _canShot;
     private bool _levelComplete;
 
     public Action onLevelComplete;
+    public Action onLaunchComplete;
+    public Action onResetEnter;
+
+    public CooldownManager _cooldownAfterReset { private set; get; }
 
     public bool LevelComplete
     {
@@ -33,6 +36,11 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        //setup 
+        _cooldownAfterReset = gameObject.AddComponent<CooldownManager>();
+        _cooldownAfterReset.cooldownDuration = 2f;
+        _cooldownAfterReset.onCooldownComplete += () => _canShot = true;
+
         _rb = GetComponent<Rigidbody2D>();
         _canShot = true;
         _rb.gravityScale = 0f;
@@ -46,6 +54,7 @@ public class PlayerController : MonoBehaviour
                 BounceLimit = _activeCheckpoint.newBounceLimit;
             }
         }
+
         transform.position = startPosition;
     }
 
@@ -105,27 +114,25 @@ public class PlayerController : MonoBehaviour
 
         // Apply the launch force to the player Rigidbody2D.
         _rb.AddForce(launchDirection, ForceMode2D.Impulse);
+
+        onLaunchComplete.Invoke();
     }
 
     public void Reset()
     {
+        onResetEnter.Invoke();
         transform.position = _activeCheckpoint.transform.position;
         _rb.gravityScale = 0f;
         _rb.velocity = Vector2.zero;
-        //todo: change magic number '3' to something else
-        StartCoroutine(CanShootCoolDown(3f));
         _currentBounceCount = 0;
         if (_activeCheckpoint.resetBounceLimit)
         {
-            this.BounceLimit = _activeCheckpoint.newBounceLimit;
+            BounceLimit = _activeCheckpoint.newBounceLimit;
         }
+        _cooldownAfterReset.StartCooldown();
     }
 
-    IEnumerator CanShootCoolDown(float timCD)
-    {
-        yield return new WaitForSeconds(timCD);
-        _canShot = true;
-    }
+
     public void UpdateCheckpoint(Checkpoint checkpoint)
     {
         _activeCheckpoint = checkpoint;

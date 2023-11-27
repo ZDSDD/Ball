@@ -11,6 +11,9 @@ public class LevelUIManager : MonoBehaviour
 {
     public Button resetButton;
     public Button menuButton;
+    public Button levelsButton;
+    public Button menuButtonFinish;
+    public Slider resetSliderCooldown;
     public PlayerController playerController;
     [FormerlySerializedAs("pausePanel")] public GameObject levelFinishedPanel;
 
@@ -18,33 +21,59 @@ public class LevelUIManager : MonoBehaviour
     {
         playerController ??= GameObject.FindWithTag("Player").GetComponent<PlayerController>();
 
+        levelsButton.onClick.AddListener(GoToLevelsMenu);
+        menuButtonFinish.onClick.AddListener(GoToMenu);
         playerController.onLevelComplete += OnLevelComplete;
+        playerController.onLaunchComplete += () => resetButton.gameObject.SetActive(true);
+        playerController.onResetEnter += () => resetButton.gameObject.SetActive(false);
         resetButton.onClick.AddListener(ResetLevel);
-        resetButton.gameObject.SetActive(true);
-        levelFinishedPanel.SetActive(false);
         menuButton.onClick.AddListener(GoToMenu);
+        playerController.onResetEnter += OnResetStart;
+        playerController._cooldownAfterReset.onValueChange += OnCooldownValueChange;
+        playerController._cooldownAfterReset.onCooldownComplete += OnCooldownComplete;
+
+        resetSliderCooldown.gameObject.SetActive(false);
+        resetSliderCooldown.value = 0f;
+        resetButton.gameObject.SetActive(false);
+        levelFinishedPanel.SetActive(false);
+    }
+
+    private void GoToLevelsMenu()
+    {
+        SceneManager.LoadScene(1);
     }
 
     private void ResetLevel()
     {
         resetButton.gameObject.SetActive(false);
         playerController.Reset();
-        StartCoroutine(ResetButtonCooldown());
-    }
-
-    private IEnumerator ResetButtonCooldown()
-    {
-        yield return new WaitForSeconds(3f);
-        resetButton.gameObject.SetActive(true);
     }
 
     private void OnLevelComplete()
     {
         resetButton.gameObject.SetActive(false);
+        menuButton.gameObject.SetActive(false);
         levelFinishedPanel.SetActive(true);
     }
+
     private void GoToMenu()
     {
         SceneManager.LoadScene(0);
+    }
+
+    private void OnResetStart()
+    {
+        resetSliderCooldown.gameObject.SetActive(true);
+    }
+
+    private void OnCooldownValueChange(float x)
+    {
+        resetSliderCooldown.value = x;
+    }
+
+    private void OnCooldownComplete()
+    {
+        resetSliderCooldown.value = 0;
+        resetSliderCooldown.gameObject.SetActive(false);
     }
 }
