@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -21,6 +22,8 @@ public class PlayerController : MonoBehaviour
 
     private bool _canShot;
     private bool _levelComplete;
+
+    public Action onLevelComplete;
 
     public bool LevelComplete
     {
@@ -109,7 +112,8 @@ public class PlayerController : MonoBehaviour
         transform.position = _activeCheckpoint.transform.position;
         _rb.gravityScale = 0f;
         _rb.velocity = Vector2.zero;
-        _canShot = true;
+        //todo: change magic number '3' to something else
+        StartCoroutine(CanShootCoolDown(3));
         _currentBounceCount = 0;
         if (_activeCheckpoint.resetBounceLimit)
         {
@@ -117,6 +121,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    IEnumerator CanShootCoolDown(float timCD)
+    {
+        yield return new WaitForSeconds(timCD);
+        _canShot = true;
+    }
     public void UpdateCheckpoint(Checkpoint checkpoint)
     {
         _activeCheckpoint = checkpoint;

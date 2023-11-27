@@ -16,6 +16,7 @@ public class Finish : MonoBehaviour
             playerController.Rb.gravityScale = 0f;
             StartCoroutine(MovePlayerToFinish(playerController));
             playerController.LevelComplete = true;
+            playerController.onLevelComplete.Invoke();
         }
     }
     /**
