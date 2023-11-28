@@ -22,12 +22,16 @@ public class LevelUIManager : MonoBehaviour
         playerController ??= GameObject.FindWithTag("Player").GetComponent<PlayerController>();
 
         levelsButton.onClick.AddListener(GoToLevelsMenu);
+        
         menuButtonFinish.onClick.AddListener(GoToMenu);
+        menuButton.onClick.AddListener(GoToMenu);
+
+        resetButton.onClick.AddListener(ResetLevel);
+        
+        
         playerController.onLevelComplete += OnLevelComplete;
         playerController.onLaunchComplete += () => resetButton.gameObject.SetActive(true);
         playerController.onResetEnter += () => resetButton.gameObject.SetActive(false);
-        resetButton.onClick.AddListener(ResetLevel);
-        menuButton.onClick.AddListener(GoToMenu);
         playerController.onResetEnter += OnResetStart;
         playerController._cooldownAfterReset.onValueChange += OnCooldownValueChange;
         playerController._cooldownAfterReset.onCooldownComplete += OnCooldownComplete;
@@ -36,6 +40,7 @@ public class LevelUIManager : MonoBehaviour
         resetSliderCooldown.value = 0f;
         resetButton.gameObject.SetActive(false);
         levelFinishedPanel.SetActive(false);
+        menuButton.gameObject.SetActive(true);
     }
 
     private void GoToLevelsMenu()
@@ -43,7 +48,7 @@ public class LevelUIManager : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
-    private void ResetLevel()
+    public void ResetLevel()
     {
         resetButton.gameObject.SetActive(false);
         playerController.Reset();
@@ -56,7 +61,7 @@ public class LevelUIManager : MonoBehaviour
         levelFinishedPanel.SetActive(true);
     }
 
-    private void GoToMenu()
+    public void GoToMenu()
     {
         SceneManager.LoadScene(0);
     }
