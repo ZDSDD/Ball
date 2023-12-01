@@ -4,8 +4,14 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - Obstacle
+  - Bouncy_Obstacle
+  - Map
   - Checkpoint
   - FinishPoint
+  - GravityMod
+  - BounceLimitMod
+  - Start
   layers:
   - Default
   - TransparentFX
