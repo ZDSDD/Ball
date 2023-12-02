@@ -11,9 +11,7 @@ public class BounceLimitMod : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        PlayerController
-            playerController = other.GetComponent<PlayerController>();
-        
+        PlayerController playerController = other.GetComponent<PlayerController>();
         if (playerController)
         {
             if (!onlyAdd)

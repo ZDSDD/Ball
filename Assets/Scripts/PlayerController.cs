@@ -10,21 +10,12 @@ public class PlayerController : MonoBehaviour
     public ProjectionDisplay _projectiondisplayRef;
     
     private Vector2 _touchStartPos; // Store the initial touch position.
-    public Vector2 startPosition = new(0, 0);
     private Checkpoint _activeCheckpoint;
-
-    public Vector2 startPosition = new(0, 0);
-    public float maxSpeed = 11f;
-    private Vector2 _activeCheckpoint = new Vector2(0,0);
-    private Vector2 _activeCheckpoint = new Vector2(0,0);
-    private Vector2 _activeCheckpoint = new Vector2(0,0);
+    private Vector2 _dragDistance = Vector2.one;
     public Vector2 getDragDistance() => _dragDistance;
 
     private Rigidbody2D _rb; // Reference to the Rigidbody2D component of the player (ball).
     public Rigidbody2D Rb => _rb;
-
-    public float launchPower = 0.1f; // Adjust this to control the sensitivity of drag.
-    public float maxSpeed = 11f;
     public int BounceLimit = -1;
     private int _currentBounceCount;
 
@@ -103,14 +94,14 @@ public class PlayerController : MonoBehaviour
                     _touchStartPos = touch.position;
                     break;
                 case TouchPhase.Moved:
-                    _dragDistance = _touchStartPos - touch.position;
-                    _projectiondisplayRef.SimulateTrajectory(this, _dragDistance);
+                    _dragDistance = touch.position - _touchStartPos;
+                    _projectiondisplayRef.SimulateTrajectory(this, -_dragDistance);
                     break;
                 case TouchPhase.Ended:
                     // Release the ball, apply a launch force based on drag distance.
                     _rb.gravityScale = 1f;
                     _projectiondisplayRef.ResetDisplay();
-                    LaunchBall(_dragDistance);
+                    LaunchBall(-_dragDistance);
                     _canShot = false;
                     break;
             }
@@ -131,7 +122,16 @@ public class PlayerController : MonoBehaviour
 
     public void Reset()
     {
-        onResetEnter.Invoke();
+        if(onResetEnter != null)
+        {
+            onResetEnter.Invoke();
+        }
+        else
+        {
+            //This was done for display simulation
+            return;
+        }
+
         transform.position = _activeCheckpoint.transform.position;
         _rb.gravityScale = 0f;
         _rb.velocity = Vector2.zero;
