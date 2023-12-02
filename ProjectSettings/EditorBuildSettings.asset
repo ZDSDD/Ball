@@ -9,8 +9,20 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
+    path: Assets/Scenes/Menu/MenuScene.unity
+    guid: 306bb64abdc79cf498d66872c19a2827
+  - enabled: 1
+    path: Assets/Scenes/Menu/LevelSelectScreen.unity
+    guid: c8e547eb7e260384db337789dcd44cd3
+  - enabled: 1
     path: Assets/Scenes/Scena_Testowa.unity
     guid: 3b069726fdd8ea042ad779d18f711c0a
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level1.unity
+    guid: d70a7d62208bb614790cafb9ce9a2a98
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level2.unity
+    guid: c2b6d4e8363fafb4c94e5a7143f00cdd
   m_configObjects:
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 61b2cdef4a9206541b8c73817c851dbc, type: 2}
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 55acfe6115b56c84a944d9ef892a77c9, type: 2}
