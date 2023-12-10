@@ -58,16 +58,30 @@ public class GravityModifier : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        _currentGravityDirection =  UpdateGravityDirection();
         if (!other.CompareTag("Player")) return;
 
         
         if (justReverse)
         {
-            Physics2D.gravity = _gravityVectorsMap[GetReversedGravityDirection()];
+            _currentGravityDirection = GetReversedGravityDirection();
         }
         else
         {
-            Physics2D.gravity = _gravityVectorsMap[mGravityDirection];
+            _currentGravityDirection = mGravityDirection;
         }
+        Physics2D.gravity = _gravityVectorsMap[_currentGravityDirection];
+    }
+
+    private GravityDirection UpdateGravityDirection()
+    {
+        foreach(var entry in _gravityVectorsMap)
+        {
+            if(entry.Value == Physics2D.gravity)
+            {
+                return entry.Key;
+            }
+        }
+        return GravityDirection.Undefined;
     }
 }

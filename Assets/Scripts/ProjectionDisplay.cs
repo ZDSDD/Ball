@@ -59,12 +59,12 @@ public class ProjectionDisplay : MonoBehaviour
 
         _rb.gravityScale = 1f;
 
-        _rb.velocity = Vector3.ClampMagnitude(_rb.velocity, playerRef.maxSpeed);
 
         _linePrefab.positionCount = _maxFrameIterations;
 
         for(int i = 0; i < _maxFrameIterations; i++)
         {
+            _rb.velocity = Vector3.ClampMagnitude(_rb.velocity, playerRef.maxSpeed);
             _physicScene.Simulate(Time.fixedDeltaTime);
             _linePrefab.SetPosition(i, ghostObj.transform.position + new Vector3(0,0,-0.1f));
         }
