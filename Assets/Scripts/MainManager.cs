@@ -5,12 +5,17 @@ using System.Diagnostics.Contracts;
 using System.IO;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainManager : MonoBehaviour
 {
     public static MainManager Instance;
     
     private HashSet<int> _unlockedLevels;
+
+    private int _currentlyPlayedLevel;
+    
+    public Action onLevelComplete;
 
     public HashSet<int> UnlockedLevels => _unlockedLevels;
 
@@ -24,6 +29,8 @@ public class MainManager : MonoBehaviour
         }
 
         Instance = this;
+        onLevelComplete += OnLevelComplete;
+        LoadProgress();
         DontDestroyOnLoad(gameObject);
     }
     [Serializable]
@@ -51,6 +58,25 @@ public class MainManager : MonoBehaviour
             string json = File.ReadAllText(path);
             SaveData data = JsonUtility.FromJson<SaveData>(json);
             _unlockedLevels.AddRange(data.unlockedLevels);
+        }
+    }
+
+    private void OnLevelComplete()
+    {
+        String levelName = SceneManager.GetActiveScene().name;
+        // Extract the numeric part from the string
+        string numericPart = levelName.Substring("Level".Length);
+
+        // Parse the numeric part to an integer
+        if (int.TryParse(numericPart, out int levelIndex))
+        {
+            // Successfully parsed, levelIndex now contains the numeric value
+            SaveProgress(levelIndex);
+        }
+        else
+        {
+            // Parsing failed, handle the error
+            throw new Exception("Invalid level name format");
         }
     }
 

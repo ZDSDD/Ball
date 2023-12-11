@@ -24,10 +24,11 @@ public class LevelSelection : MonoBehaviour
             levelButtons[i].onClick.AddListener(() => LoadLevel(levelIndex));
             levelButtons[i].interactable = false;
         }
-        foreach(int unlockIndex in unlockedLevels)
+
+        foreach (int unlockIndex in unlockedLevels)
         {
             //check in case unlockIndex is out of bounds
-            if(levelButtons.Length > unlockIndex)
+            if (levelButtons.Length > unlockIndex)
                 levelButtons[unlockIndex].interactable = true;
         }
     }
