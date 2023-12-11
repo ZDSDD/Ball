@@ -16,6 +16,7 @@ public class LevelUIManager : MonoBehaviour
     public Slider resetSliderCooldown;
     public PlayerController playerController;
     [FormerlySerializedAs("pausePanel")] public GameObject levelFinishedPanel;
+    
 
     private void Start()
     {
@@ -28,13 +29,13 @@ public class LevelUIManager : MonoBehaviour
 
         resetButton.onClick.AddListener(ResetLevel);
         
+        MainManager.Instance.onLevelComplete += OnLevelComplete;
         
-        playerController.onLevelComplete += OnLevelComplete;
         playerController.onLaunchComplete += () => resetButton.gameObject.SetActive(true);
         playerController.onResetEnter += () => resetButton.gameObject.SetActive(false);
         playerController.onResetEnter += OnResetStart;
-        playerController._cooldownAfterReset.onValueChange += OnCooldownValueChange;
-        playerController._cooldownAfterReset.onCooldownComplete += OnCooldownComplete;
+        playerController.CooldownAfterReset.onValueChange += OnCooldownValueChange;
+        playerController.CooldownAfterReset.onCooldownComplete += OnCooldownComplete;
 
         resetSliderCooldown.gameObject.SetActive(false);
         resetSliderCooldown.value = 0f;
@@ -80,5 +81,10 @@ public class LevelUIManager : MonoBehaviour
     {
         resetSliderCooldown.value = 0;
         resetSliderCooldown.gameObject.SetActive(false);
+    }
+
+    private void OnDestroy()
+    {
+        MainManager.Instance.onLevelComplete -= OnLevelComplete;
     }
 }

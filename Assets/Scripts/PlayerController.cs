@@ -21,12 +21,11 @@ public class PlayerController : MonoBehaviour
 
     private bool _canShot;
     private bool _levelComplete;
-
-    public Action onLevelComplete;
+    
     public Action onLaunchComplete;
     public Action onResetEnter;
 
-    public CooldownManager _cooldownAfterReset { private set; get; }
+    public CooldownManager CooldownAfterReset { private set; get; }
 
     public bool LevelComplete
     {
@@ -37,9 +36,9 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         //setup 
-        _cooldownAfterReset = gameObject.AddComponent<CooldownManager>();
-        _cooldownAfterReset.cooldownDuration = 2f;
-        _cooldownAfterReset.onCooldownComplete += () => _canShot = true;
+        CooldownAfterReset = gameObject.AddComponent<CooldownManager>();
+        CooldownAfterReset.cooldownDuration = 2f;
+        CooldownAfterReset.onCooldownComplete += () => _canShot = true;
 
         _rb = GetComponent<Rigidbody2D>();
         _canShot = true;
@@ -140,7 +139,7 @@ public class PlayerController : MonoBehaviour
         {
             BounceLimit = _activeCheckpoint.newBounceLimit;
         }
-        _cooldownAfterReset.StartCooldown();
+        CooldownAfterReset.StartCooldown();
     }
 
 
