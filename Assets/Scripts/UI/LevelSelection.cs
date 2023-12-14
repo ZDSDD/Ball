@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class LevelSelection : MonoBehaviour
 {
     public Button[] levelButtons;
+    public Button resetButton;
 
     private void Awake()
     {
@@ -31,11 +32,25 @@ public class LevelSelection : MonoBehaviour
             if (levelButtons.Length > unlockIndex)
                 levelButtons[unlockIndex].interactable = true;
         }
+
+
+        resetButton.interactable = true;
+        resetButton.onClick.AddListener(() =>
+        {
+            MainManager.Instance.ResetProgress();
+            Debug.Log("resetButton.onClick");
+            LoadLevel(SceneManager.GetActiveScene().name);
+        });
     }
 
     void LoadLevel(int levelIndex)
     {
         string levelName = "Level" + levelIndex; // Adjust the naming convention if needed
+        SceneManager.LoadScene(levelName);
+    }
+
+    void LoadLevel(String levelName)
+    {
         SceneManager.LoadScene(levelName);
     }
 }

@@ -80,4 +80,15 @@ public class MainManager : MonoBehaviour
         }
     }
 
+    public void ResetProgress()
+    {
+        SaveData data = new SaveData();
+        _unlockedLevels = new HashSet<int>() { 0 };
+        data.unlockedLevels = new List<int>(_unlockedLevels);
+
+        string json = JsonUtility.ToJson(data);
+        File.WriteAllText(Application.persistentDataPath + "/savefile.json",json);
+        LoadProgress();
+    }
+
 }
