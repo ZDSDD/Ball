@@ -9,6 +9,7 @@ public class LevelSelection : MonoBehaviour
 {
     public Button[] levelButtons;
     public Button resetButton;
+    public Button menuButton;
 
     private void Awake()
     {
@@ -40,6 +41,12 @@ public class LevelSelection : MonoBehaviour
             MainManager.Instance.ResetProgress();
             Debug.Log("resetButton.onClick");
             LoadLevel(SceneManager.GetActiveScene().name);
+        });
+
+        menuButton.interactable = true;
+        menuButton.onClick.AddListener(() =>
+        {
+            SceneManager.LoadScene("MenuScene");
         });
     }
 
