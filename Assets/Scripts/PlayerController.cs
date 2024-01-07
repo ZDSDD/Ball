@@ -191,6 +191,15 @@ public class PlayerController : MonoBehaviour
     public void UpdateCheckpoint(Checkpoint checkpoint)
     {
         _activeCheckpoint = checkpoint;
+        
+        if (checkpoint.newBounceLimit >= -1)
+        {
+            this.BounceLimit = checkpoint.newBounceLimit;
+        }
+        if (checkpoint.resetBounceLimit)
+        {
+            this.BounceLimit = BounceLimit;
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D other)
