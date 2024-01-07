@@ -4146,10 +4146,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level UI Manager
       objectReference: {fileID: 0}
-    - target: {fileID: 115009614737376026, guid: f3358950feedb0547a5532bd86182514, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 396629311828658151, guid: f3358950feedb0547a5532bd86182514, type: 3}
       propertyPath: m_LocalPosition.x
       value: -231.46103
@@ -4190,30 +4186,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 761270808666274285, guid: f3358950feedb0547a5532bd86182514, type: 3}
-      propertyPath: m_AdditionalShaderChannelsFlag
-      value: 25
-      objectReference: {fileID: 0}
+    - target: {fileID: 1952198306946078032, guid: f3358950feedb0547a5532bd86182514, type: 3}
+      propertyPath: playerController
+      value: 
+      objectReference: {fileID: 1022844659}
     - target: {fileID: 3645325441954950327, guid: f3358950feedb0547a5532bd86182514, type: 3}
       propertyPath: playerController
       value: 
       objectReference: {fileID: 1022844659}
-    - target: {fileID: 4766262659013145426, guid: f3358950feedb0547a5532bd86182514, type: 3}
-      propertyPath: m_Color.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4766262659013145426, guid: f3358950feedb0547a5532bd86182514, type: 3}
-      propertyPath: m_Color.b
-      value: 0.95341825
-      objectReference: {fileID: 0}
-    - target: {fileID: 4766262659013145426, guid: f3358950feedb0547a5532bd86182514, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5491748287516216691, guid: f3358950feedb0547a5532bd86182514, type: 3}
-      propertyPath: m_Color.a
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

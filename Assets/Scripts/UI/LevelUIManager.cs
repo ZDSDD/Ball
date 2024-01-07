@@ -21,6 +21,7 @@ public class LevelUIManager : MonoBehaviour
     private void Start()
     {
         playerController ??= GameObject.FindWithTag("Player").GetComponent<PlayerController>();
+        
 
         levelsButton.onClick.AddListener(GoToLevelsMenu);
         
@@ -43,6 +44,7 @@ public class LevelUIManager : MonoBehaviour
         levelFinishedPanel.SetActive(false);
         menuButton.gameObject.SetActive(true);
     }
+    
 
     private void GoToLevelsMenu()
     {

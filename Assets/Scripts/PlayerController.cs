@@ -8,20 +8,64 @@ public class PlayerController : MonoBehaviour
     public float maxSpeed = 11f;
     public Vector2 startPosition = new(0, 0);
     public ProjectionDisplay _projectiondisplayRef;
-    
+
     private Vector2 _touchStartPos; // Store the initial touch position.
     private Checkpoint _activeCheckpoint;
     private Vector2 _dragDistance = Vector2.one;
     public Vector2 getDragDistance() => _dragDistance;
 
     private Rigidbody2D _rb; // Reference to the Rigidbody2D component of the player (ball).
+
     public Rigidbody2D Rb => _rb;
-    public int BounceLimit = -1;
+
+    // Define the event using Action with a generic parameter.
+    public event Action<int> BounceLimitChanged;
+
+    // The actual variable
+    private int _bounceLimit = -1;
+
+    public int BounceLimit
+    {
+        get => _bounceLimit;
+        set
+        {
+            if (_bounceLimit == value) return;
+            
+            _bounceLimit = value;
+            // Invoke the event when the value changes.
+            OnBounceLimitChanged();
+        }
+    }
+
+    protected virtual void OnBounceLimitChanged()
+    {
+        // Fire the event.
+        BounceLimitChanged?.Invoke(BounceLimit);
+    }
+
+    public event Action<int> CurrentBounceCountChanged;
+
     private int _currentBounceCount;
+
+    public int CurrentBounceCount
+    {
+        get => _currentBounceCount;
+        private set
+        {
+            if (value == _currentBounceCount) return;
+            _currentBounceCount = value;
+            OnCurrentBounceCountChanged();
+    }
+    }
+    
+    protected virtual void OnCurrentBounceCountChanged()
+    {
+        CurrentBounceCountChanged?.Invoke(CurrentBounceCount);
+    }
 
     private bool _canShot;
     private bool _levelComplete;
-    
+
     public Action onLaunchComplete;
     public Action onResetEnter;
 
@@ -121,7 +165,7 @@ public class PlayerController : MonoBehaviour
 
     public void Reset()
     {
-        if(onResetEnter != null)
+        if (onResetEnter != null)
         {
             onResetEnter.Invoke();
         }
@@ -134,11 +178,12 @@ public class PlayerController : MonoBehaviour
         transform.position = _activeCheckpoint.transform.position;
         _rb.gravityScale = 0f;
         _rb.velocity = Vector2.zero;
-        _currentBounceCount = 0;
+        CurrentBounceCount = 0;
         if (_activeCheckpoint.resetBounceLimit)
         {
             BounceLimit = _activeCheckpoint.newBounceLimit;
         }
+
         CooldownAfterReset.StartCooldown();
     }
 
@@ -154,14 +199,14 @@ public class PlayerController : MonoBehaviour
         // '-1' means unlimited bounces are allowed
         if (BounceLimit > -1)
         {
-            if (_currentBounceCount >= BounceLimit)
+            if (CurrentBounceCount >= BounceLimit)
             {
                 Reset();
             }
             else
             {
-                _currentBounceCount++;
-                Debug.Log("_currentBounceCount: " + _currentBounceCount + ", BounceLimit: " + BounceLimit);
+                CurrentBounceCount++;
+                Debug.Log("CurrentBounceCount: " + CurrentBounceCount + ", BounceLimit: " + BounceLimit);
             }
         }
         //Handle wrong bounce limit 
@@ -170,4 +215,5 @@ public class PlayerController : MonoBehaviour
             BounceLimit = -1;
         }
     }
+    
 }
