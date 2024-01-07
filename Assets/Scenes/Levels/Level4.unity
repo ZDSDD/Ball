@@ -327,7 +327,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5543860001103147760, guid: b3f1410c11666ee42bcbc01312c1c108, type: 3}
       propertyPath: maxSpeed
-      value: 14
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 5543860001103147760, guid: b3f1410c11666ee42bcbc01312c1c108, type: 3}
       propertyPath: BounceLimit
@@ -1821,6 +1821,10 @@ PrefabInstance:
     - target: {fileID: 396629311828658151, guid: f3358950feedb0547a5532bd86182514, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 761270808666274285, guid: f3358950feedb0547a5532bd86182514, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 3645325441954950327, guid: f3358950feedb0547a5532bd86182514, type: 3}
       propertyPath: playerController
