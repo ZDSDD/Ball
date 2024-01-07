@@ -63,6 +63,7 @@ public class MainManager : MonoBehaviour
 
     private void OnLevelComplete()
     {
+        Physics2D.gravity = new Vector2(0, -9.8f);
         String levelName = SceneManager.GetActiveScene().name;
         // Extract the numeric part from the string
         string numericPart = levelName.Substring("Level".Length);
