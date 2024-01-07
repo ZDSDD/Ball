@@ -30,15 +30,26 @@ public class ProjectionDisplay : MonoBehaviour
                 continue;
             }
 
-            for(int i = 0; i < parent.childCount; i++)
+            addAllObstacles(parent);
+        }
+    }
+
+    private void addAllObstacles(Transform parent)
+    {
+        for (int i = 0; i < parent.childCount; i++)
+        {
+            if (parent.GetChild(i).childCount == 0)
             {
                 var obj = parent.GetChild(i);
                 var ghostObj = Instantiate(obj.gameObject, obj.position, obj.rotation);
                 ghostObj.GetComponent<Renderer>().enabled = false;
                 SceneManager.MoveGameObjectToScene(ghostObj, _simulationScene);
             }
+            else
+            {
+                addAllObstacles(parent.GetChild(i));
+            }
         }
-
     }
 
     [SerializeField] private LineRenderer _linePrefab;
