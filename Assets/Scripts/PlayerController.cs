@@ -21,6 +21,10 @@ public class PlayerController : MonoBehaviour
     // Define the event using Action with a generic parameter.
     public event Action<int> BounceLimitChanged;
 
+    public event Action<float> LaunchPowerChanged;
+    public event Action LaunchEnd;
+    
+
     // The actual variable
     private int _bounceLimit = -1;
 
@@ -30,7 +34,7 @@ public class PlayerController : MonoBehaviour
         set
         {
             if (_bounceLimit == value) return;
-            
+
             _bounceLimit = value;
             // Invoke the event when the value changes.
             OnBounceLimitChanged();
@@ -55,9 +59,9 @@ public class PlayerController : MonoBehaviour
             if (value == _currentBounceCount) return;
             _currentBounceCount = value;
             OnCurrentBounceCountChanged();
+        }
     }
-    }
-    
+
     protected virtual void OnCurrentBounceCountChanged()
     {
         CurrentBounceCountChanged?.Invoke(CurrentBounceCount);
@@ -139,6 +143,7 @@ public class PlayerController : MonoBehaviour
                 case TouchPhase.Moved:
                     _dragDistance = touch.position - _touchStartPos;
                     _projectiondisplayRef.SimulateTrajectory(this, -_dragDistance);
+                    OnLaunchPowerChanged(_dragDistance.magnitude);
                     break;
                 case TouchPhase.Ended:
                     // Release the ball, apply a launch force based on drag distance.
@@ -146,6 +151,7 @@ public class PlayerController : MonoBehaviour
                     _projectiondisplayRef.ResetDisplay();
                     LaunchBall(-_dragDistance);
                     _canShot = false;
+                    OnLaunchEnd();
                     break;
             }
         }
@@ -191,11 +197,12 @@ public class PlayerController : MonoBehaviour
     public void UpdateCheckpoint(Checkpoint checkpoint)
     {
         _activeCheckpoint = checkpoint;
-        
+
         if (checkpoint.newBounceLimit >= -1)
         {
             this.BounceLimit = checkpoint.newBounceLimit;
         }
+
         if (checkpoint.resetBounceLimit)
         {
             this.BounceLimit = BounceLimit;
@@ -215,7 +222,6 @@ public class PlayerController : MonoBehaviour
             else
             {
                 CurrentBounceCount++;
-                Debug.Log("CurrentBounceCount: " + CurrentBounceCount + ", BounceLimit: " + BounceLimit);
             }
         }
         //Handle wrong bounce limit 
@@ -224,5 +230,14 @@ public class PlayerController : MonoBehaviour
             BounceLimit = -1;
         }
     }
-    
+
+    protected virtual void OnLaunchPowerChanged(float obj)
+    {
+        LaunchPowerChanged?.Invoke(obj);
+    }
+
+    protected virtual void OnLaunchEnd()
+    {
+        LaunchEnd?.Invoke();
+    }
 }
