@@ -59,8 +59,6 @@ public class CameraFollow : MonoBehaviour
         {
             power = (float)Math.Log(power) + _initialSize;
         }
-
-        Debug.Log(power);
         camera.orthographicSize = power;
     }
 
